@@ -147,8 +147,6 @@ desarrollan aquí para no duplicar contenido.
 
 ## 4. Conclusiones
 
-## Conclusiones
-
 Al final entendí que en programación funcional no hay "for" ni "while" porque
 ni falta que hacen: una lista ya trae la receta de cómo recorrerla. Si la
 lista está vacía, ya acabaste (ese es el caso base). Si no está vacía, agarras
