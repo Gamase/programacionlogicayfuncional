@@ -2,16 +2,7 @@
 
 ## Resumen
 
-Este anexo presenta una investigación introductoria sobre cómo se recorren
-listas de manera recursiva en lenguajes funcionales, en contraste con la
-iteración imperativa basada en bucles. Se toman como referencia dos de los
-lenguajes centrales del curso, **Haskell** y **Erlang**, con una mención breve
-a **Elixir** por compartir la máquina virtual BEAM con Erlang. La idea central
-es que, al no existir estructuras de control como `for` o `while` en su forma
-imperativa clásica, los lenguajes funcionales recorren listas descomponiéndolas
-en **cabeza** (`head`) y **cola** (`tail`), resolviendo el problema para el
-primer elemento y delegando el resto a una llamada recursiva sobre la cola,
-hasta llegar a un caso base: la lista vacía.
+En la presente investigacion se estara documentando toda la informacion obtenida acerca de como se recorren las listas de manera recursiva en lenguajes funcionales tales como Haskell y Erlang. La idea central de la investigacion es que a falta de tener estructuras de control tales como el ciclo for o while, los lenguajes funcionales recorren listas descomponiéndolas en cabeza (head) y cola (tail), resolviendo el problema para el primer elemento y delegando el resto a una llamada recursiva sobre la cola, hasta llegar a un caso base: la lista vacía.
 
 **Palabras clave:** recursión, listas enlazadas, programación funcional,
 pattern matching, Haskell, Erlang, caso base, caso recursivo.
@@ -156,16 +147,21 @@ desarrollan aquí para no duplicar contenido.
 
 ## 4. Conclusiones
 
-Recorrer una lista de forma recursiva no es una alternativa estilística al
-bucle imperativo, sino una consecuencia natural de cómo se define una lista
-en los lenguajes funcionales: como un elemento seguido de otra lista más
-pequeña. Tanto Haskell como Erlang resuelven este recorrido con el mismo
-esquema conceptual —caso base para la lista vacía, caso recursivo para
-cabeza y cola— aunque cada uno lo expresa con su propia sintaxis de *pattern
-matching*. Comprender este patrón es la base indispensable antes de abordar
-la recursión de cola (tema 28) y las funciones de orden superior como `map`,
-`filter` y `foldr`/`foldl` (tema 19), que en realidad son abstracciones
-construidas sobre este mismo esquema de recorrido.
+## Conclusiones
+
+Al final entendí que en programación funcional no hay "for" ni "while" porque
+ni falta que hacen: una lista ya trae la receta de cómo recorrerla. Si la
+lista está vacía, ya acabaste (ese es el caso base). Si no está vacía, agarras
+el primer elemento, haces lo que tengas que hacer con él, y le dejas el resto
+de la lista a otra llamada de la misma función (ese es el caso recursivo).
+Suena raro al principio porque uno está acostumbrado a pensar en índices y
+contadores, pero una vez que le agarras la onda a separar "cabeza" y "cola"
+ya no se te olvida, y tanto en Haskell como en Erlang es básicamente la misma
+idea, nomás cambia un poco la sintaxis (`(x:xs)` contra `[H|T]`). Esto también
+me sirvió para entender por qué en el siguiente tema hablan de recursión de
+cola: como aquí la suma se hace hasta que regresa la llamada recursiva
+(`x + sumaLista xs`), cada llamada se queda "esperando" en la pila, y eso es
+justo lo que luego se resuelve con acumuladores.
 
 ## Referencias
 
