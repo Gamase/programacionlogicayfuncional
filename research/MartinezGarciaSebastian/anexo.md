@@ -17,6 +17,7 @@
   - "¿Por qué Elixir usa una sintaxis tan parecida a la de Erlang para descomponer listas? 
   - "Compara Haskell y Erlang en una tabla: cómo descomponen la lista, cómo manejan el caso base, y si la evaluación es perezosa o estricta."
   - "¿Esto que escribí (`x + sumaLista xs`) es recursión de cola o no?"
+  - "Hazme un cuadro comparativo del recorrido de listas de forma recursiva entre Erlang y Haskell"
   - "Dame bibliografía en formato IEEE para citar Haskell y Erlang."
   - "Ayudame a estructurar el readme.md para que se vea con buen formato en GitHub"
   - "Ayudame a hacer lo mismo para este archivo de bitacora"
